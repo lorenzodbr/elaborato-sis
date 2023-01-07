@@ -1,0 +1,13 @@
+# DEMULTIPLEXER 2 USCITE DA 1 BIT CIASCUNO
+
+.model demux2o1b 
+.inputs S I 
+.outputs A B 
+
+.names S I A
+01 1
+
+.names S I B
+11 1
+
+.end
