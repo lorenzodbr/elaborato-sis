@@ -1,0 +1,110 @@
+.model controllore
+.inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0
+.outputs STORE1 STORE0 SETTORE_NON_VALIDO
+.latch    [18] LatchOut_v5   0
+.latch    [19] LatchOut_v6   1
+.latch    [20] LatchOut_v7   1
+.start_kiss
+.i 5
+.o 3
+.p 27
+.s 5
+.r OFF
+0---- OFF OFF 001
+-0--- OFF OFF 001
+--0-- OFF OFF 001
+---0- OFF OFF 001
+----0 OFF OFF 001
+11111 OFF LOAD_A 000
+----- LOAD_A LOAD_B 010
+----- LOAD_B LOAD_C 100
+----- LOAD_C READY 110
+--101 READY READY 001
+--011 READY READY 001
+--11- READY READY 001
+10000 READY READY 001
+-1000 READY READY 001
+00001 READY READY 001
+00010 READY READY 001
+00100 READY READY 001
+11100 READY READY 001
+11010 READY READY 001
+11001 READY READY 001
+01001 READY READY 000
+01010 READY READY 000
+01100 READY READY 000
+10001 READY READY 000
+10010 READY READY 000
+10100 READY READY 000
+00000 READY OFF 001
+.end_kiss
+.latch_order LatchOut_v5 LatchOut_v6 LatchOut_v7
+.code OFF 011
+.code LOAD_A 101
+.code LOAD_B 111
+.code LOAD_C 100
+.code READY 001
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+LatchOut_v7 [18]
+-----11- 1
+-----101 1
+1111101- 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+LatchOut_v7 [19]
+0----01- 1
+-0---01- 1
+--0--01- 1
+---0-01- 1
+----001- 1
+-----101 1
+000000-- 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 [20]
+------0 1
+0----01 1
+-0---01 1
+--0--01 1
+---0-01 1
+----001 1
+1111101 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STORE1
+--0 1
+11- 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STORE0
+--0 1
+101 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+SETTORE_NON_VALIDO
+00---0- 1
+0----01 1
+-0---01 1
+--0--01 1
+---0-01 1
+----001 1
+--0000- 1
+11---00 1
+--11-00 1
+--1-100 1
+---1100 1
+.exdc 
+.inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+LatchOut_v7
+.outputs [18] [19] [20] STORE1 STORE0 SETTORE_NON_VALIDO
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [18]
+0-0 1
+-10 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [19]
+0-0 1
+-10 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [20]
+0-0 1
+-10 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STORE1
+0-0 1
+-10 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STORE0
+0-0 1
+-10 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 SETTORE_NON_VALIDO
+0-0 1
+-10 1
+.end
