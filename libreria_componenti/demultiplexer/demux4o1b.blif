@@ -1,0 +1,19 @@
+# DEMULTIPLEXER 4 USCITE DA 1 BIT CIASCUNO
+
+.model demux4o1b 
+.inputs S1 S0 I 
+.outputs A B C D
+
+.names S1 S0 I A
+001 1
+
+.names S1 S0 I B
+011 1
+
+.names S1 S0 I C
+101 1
+
+.names S1 S0 I D
+111 1
+
+.end

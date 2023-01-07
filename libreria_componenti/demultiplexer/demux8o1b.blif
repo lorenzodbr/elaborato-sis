@@ -1,0 +1,31 @@
+# DEMULTIPLEXER 8 USCITE DA 1 BIT CIASCUNA
+
+.model demux8o1b
+.inputs S2 S1 S0 I
+.outputs A B C D E F G H
+
+.names S2 S1 S0 I A
+0001 1
+
+.names S2 S1 S0 I B
+0011 1
+
+.names S2 S1 S0 I C
+0101 1
+
+.names S2 S1 S0 I D
+0111 1
+
+.names S2 S1 S0 I E
+1001 1
+
+.names S2 S1 S0 I F
+1011 1
+
+.names S2 S1 S0 I G
+1101 1
+
+.names S2 S1 S0 I H
+1111 1
+
+.end
