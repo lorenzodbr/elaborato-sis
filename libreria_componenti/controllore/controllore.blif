@@ -1,0 +1,56 @@
+.model controllore
+.inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0
+.outputs STORE1 STORE0 SETTORE_NON_VALIDO
+
+.start_kiss
+.i 5 #numero di segnali di ingresso
+.o 3 #numero di segnali di uscita
+.s 5 #numero di stati
+.p 27 #numero di transizioni
+.r OFF #stato di reset
+
+#Tabella delle transizioni
+
+#Attesa di accensione
+0---- OFF OFF 001
+-0--- OFF OFF 001
+--0-- OFF OFF 001
+---0- OFF OFF 001
+----0 OFF OFF 001
+11111 OFF LOAD_A 000
+
+#Caricamento del primo settore
+----- LOAD_A LOAD_B 010
+
+#Caricamento del secondo settore
+----- LOAD_B LOAD_C 100
+
+#Caricamento del terzo settore
+----- LOAD_C READY 110
+
+#Gestione errori di inserimento
+--101 READY READY 001
+--011 READY READY 001
+--11- READY READY 001
+10000 READY READY 001
+-1000 READY READY 001
+00001 READY READY 001
+00010 READY READY 001
+00100 READY READY 001
+11100 READY READY 001
+11010 READY READY 001
+11001 READY READY 001
+
+#Inserimenti validi
+01001 READY READY 000
+01010 READY READY 000
+01100 READY READY 000
+10001 READY READY 000
+10010 READY READY 000
+10100 READY READY 000
+
+00000 READY OFF 001
+
+.end_kiss
+
+.end

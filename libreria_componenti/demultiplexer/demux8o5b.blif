@@ -4,6 +4,10 @@
 .inputs S2 S1 S0 I4 I3 I2 I1 I0
 .outputs A4 A3 A2 A1 A0 B4 B3 B2 B1 B0 C4 C3 C2 C1 C0 D4 D3 D2 D1 D0 E4 E3 E2 E1 E0 F4 F3 F2 F1 F0 G4 G3 G2 G1 G0 H4 H3 H2 H1 H0
 
+#S:
+# 000 001 010 011 100 101 110 111
+# Ax  Bx  Cx  Dx  Ex  Fx  Gx  Hx
+
 # Usa 8 demultiplexer con 8 uscite di 1 bit ciascuna
 .search demux8o1b.blif 
 .subckt demux8o1b S2=S2 S1=S1 S0=S0 I=I4 A=A4 B=B4 C=C4 D=D4 E=E4 F=F4 G=G4 H=H4
