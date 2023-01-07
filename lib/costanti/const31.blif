@@ -1,0 +1,12 @@
+.model const31
+.outputs O4 O3 O2 O1 O0
+
+.search lib/costanti/const1.blif
+
+.subckt const1 O=O4
+.subckt const1 O=O3
+.subckt const1 O=O2
+.subckt const1 O=O1
+.subckt const1 O=O0
+
+.end
