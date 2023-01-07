@@ -4,7 +4,7 @@
 
 .model fulladder5
 .inputs A4 A3 A2 A1 A0 B4 B3 B2 B1 B0 CIN 
-.outputs O3 O2 O1 O0 COUT 
+.outputs O4 O3 O2 O1 O0 COUT 
 
 # Importa il sommatore fulladder a 1 bit
 .search fulladder1.blif 
