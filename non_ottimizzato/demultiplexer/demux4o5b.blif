@@ -1,0 +1,19 @@
+# DEMULTIPLEXER 4 USCITE DA 5 BIT CIASCUNA
+
+.model demux4o5b
+.inputs S1 S0 I4 I3 I2 I1 I0
+.outputs A4 A3 A2 A1 A0 B4 B3 B2 B1 B0 C4 C3 C2 C1 C0 D4 D3 D2 D1 D0
+
+#S:
+#00 01 10 11
+#Ax Bx Cx Dx
+
+# Usa 5 demultiplexer con 4 uscite di 1 bit ciascuna
+.search demultiplexer/demux4o1b.blif
+.subckt demux4o1b S1=S1 S0=S0 I=I4 A=A4 B=B4 C=C4 D=D4
+.subckt demux4o1b S1=S1 S0=S0 I=I3 A=A3 B=B3 C=C3 D=D3
+.subckt demux4o1b S1=S1 S0=S0 I=I2 A=A2 B=B2 C=C2 D=D2
+.subckt demux4o1b S1=S1 S0=S0 I=I1 A=A1 B=B1 C=C1 D=D1
+.subckt demux4o1b S1=S1 S0=S0 I=I0 A=A0 B=B0 C=C0 D=D0
+
+.end

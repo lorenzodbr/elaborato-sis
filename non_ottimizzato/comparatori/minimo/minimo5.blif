@@ -1,0 +1,13 @@
+#MINIMO VALORE TRA I DUE DI 5 BIT CIASCUNO
+
+.model minimo5
+.inputs A4 A3 A2 A1 A0 B4 B3 B2 B1 B0
+.outputs O4 O3 O2 O1 O0
+
+.search comparatori/minore/minore_uguale5.blif
+.subckt minore_uguale5 C4=A4 C3=A3 C2=A2 C1=A1 C0=A0 D4=B4 D3=B3 D2=B2 D1=B1 D0=B0 ClteD=ClteD
+
+.search multiplexer/mux2i5b.blif
+.subckt mux2i5b S=ClteD A4=B4 A3=B3 A2=B2 A1=B1 A0=B0 B4=A4 B3=A3 B2=A2 B1=A1 B0=A0 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
+
+.end
