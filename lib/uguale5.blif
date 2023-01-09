@@ -3,7 +3,7 @@
 .outputs O 
 
 # Usa porta xnor per verificare che tutti i bit sono uguali
-.search porte_logiche/xnor.blif
+.search xnor.blif
 .subckt xnor A=A4 B=B4 O=X4
 .subckt xnor A=A3 B=B3 O=X3
 .subckt xnor A=A2 B=B2 O=X2

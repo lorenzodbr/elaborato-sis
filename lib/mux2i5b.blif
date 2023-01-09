@@ -5,7 +5,7 @@
 .outputs O4 O3 O2 O1 O0
 
 # Usa 5 multiplexer con 2 ingressi di 1 bit ciascuno
-.search multiplexer/mux2i1b.blif
+.search mux2i1b.blif
 .subckt mux2i1b S=S I1=A4 I0=B4 O=O4
 .subckt mux2i1b S=S I1=A3 I0=B3 O=O3 
 .subckt mux2i1b S=S I1=A2 I0=B2 O=O2  

@@ -1,0 +1,19 @@
+.model encoder3to2
+
+.inputs I2 I1 I0
+.outputs O1 O0
+
+#Sector A:  100 -> 11
+#Sector B:  010 -> 10
+#Sector C:  001 -> 01
+#Not valid: --- -> 00
+
+.names I2 I1 I0 O1
+100 1
+010 1
+
+.names I2 I1 I0 O0
+001 1
+100 1
+
+.end

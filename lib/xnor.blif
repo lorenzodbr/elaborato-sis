@@ -8,11 +8,11 @@
 .outputs O
 
 # A, B --( XOR )--> NOR_OUT
-.search porte_logiche/xor.blif               # Importa la porta xor
+.search xor.blif               # Importa la porta xor
 .subckt xor A=A B=B O=NOR_OUT  # Collega gli ingressi dello xnor a quelli dello xor
 
 # NOR_OUT --( NOT )--> O
-.search porte_logiche/not.blif           # Importa la porta not
+.search not.blif           # Importa la porta not
 .subckt not A=NOR_OUT O=O  # Collega l'uscita dello xor alla porta not
 
 .end

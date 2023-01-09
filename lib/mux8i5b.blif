@@ -5,7 +5,7 @@
 .outputs O4 O3 O2 O1 O0
 
 # Usa 5 multiplexer con 8 ingressi di 1 bit ciascuno
-.search multiplexer/mux8i1b.blif
+.search mux8i1b.blif
 .subckt mux8i1b S2=S2 S1=S1 S0=S0 I7=A4 I6=B4 I5=C4 I4=D4 I3=E4 I2=F4 I1=G4 I0=H4 O=O4
 .subckt mux8i1b S2=S2 S1=S1 S0=S0 I7=A3 I6=B3 I5=C3 I4=D3 I3=E3 I2=F3 I1=G3 I0=H3 O=O3 
 .subckt mux8i1b S2=S2 S1=S1 S0=S0 I7=A2 I6=B2 I5=C2 I4=D2 I3=E2 I2=F2 I1=G2 I0=H2 O=O2  

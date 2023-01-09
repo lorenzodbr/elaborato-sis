@@ -8,7 +8,7 @@
 # se due bit sono diversi, quel
 # dato che ha bit = 1 e' maggiore dell'altro
 
-.search porte_logiche/xor.blif
+.search xor.blif
 
 .subckt xor A=A4 B=B4 O=X4 
 .subckt xor A=A3 B=B3 O=X3 

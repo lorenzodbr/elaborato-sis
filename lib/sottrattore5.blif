@@ -12,9 +12,9 @@
 .outputs O4 O3 O2 O1 O0 IGNORE
 
 # Importa not e fulladder a 2 bit
-.search porte_logiche/not.blif
-.search sommatori/fulladder5.blif
-.search costanti/const0.blif
+.search not.blif
+.search fulladder5.blif
+.search const0.blif
 
 # NEGA I BIT DI B
 .subckt not A=B0 O=INV0
@@ -23,8 +23,8 @@
 .subckt not A=B3 O=INV3
 .subckt not A=B4 O=INV4
 
-.search costanti/const1.blif
-.search costanti/const0.blif
+.search const1.blif
+.search const0.blif
 
 .subckt const1 O=NUM_1
 .subckt const0 O=NUM_0

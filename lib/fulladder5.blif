@@ -7,7 +7,7 @@
 .outputs O4 O3 O2 O1 O0 COUT 
 
 # Importa il sommatore fulladder a 1 bit
-.search sommatori/fulladder1.blif 
+.search fulladder1.blif 
 
 # usa 5 sommatori fulladder a 1 bit
 .subckt fulladder1 A=A0 B=B0 CIN=CIN O=O0 COUT=C0 

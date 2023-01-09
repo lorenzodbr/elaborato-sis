@@ -10,7 +10,7 @@
 .outputs O4 O3 O2 O1 O0
 
 # Importa registro 1 bit
-.search registri/registro1.blif
+.search registro1.blif
 
 # Usa quattro registri da 1 bit in parallelo per ottenere registro a 4 bit
 .subckt registro1 A=A4 O=O4

@@ -1,8 +1,8 @@
 .model const24
 .outputs O4 O3 O2 O1 O0
 
-.search costanti/const1.blif
-.search costanti/const0.blif
+.search const1.blif
+.search const0.blif
 
 .subckt const1 O=O4
 .subckt const1 O=O3
