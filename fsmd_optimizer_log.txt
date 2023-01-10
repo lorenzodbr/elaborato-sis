@@ -1,0 +1,4 @@
+[1673344975]La miglior fsmd e' '/home/sis/Desktop/elaborato-sis/lib/FSMD_L4_1.blif'
+[1673344975]* area: 6056.0
+[1673344975]* numero di gate: 177.0
+[1673344975]L'ottimizzazione e' durata 9 secondi
