@@ -1,0 +1,4 @@
+[1673346255]La miglior fsm e' '/home/sis/Desktop/elaborato-sis/lib/controllore_L2_1.blif'
+[1673346255]* area: 968.0
+[1673346255]* numero di gate: 27.0
+[1673346255]L'ottimizzazione e' durata 4 secondi

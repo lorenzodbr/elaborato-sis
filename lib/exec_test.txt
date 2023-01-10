@@ -1,0 +1,5 @@
+set sisout /home/sis/Desktop/elaborato-sis/lib/outputs/controllore_L10_10_optimized_out.txt
+read_blif /home/sis/Desktop/elaborato-sis/lib/controllore_L10_10.blif
+source /home/sis/Desktop/elaborato-sis/_optimizer_scripts/optimize_fsm.script
+write_blif /home/sis/Desktop/elaborato-sis/lib/controllore_L11_10.blif
+quit
