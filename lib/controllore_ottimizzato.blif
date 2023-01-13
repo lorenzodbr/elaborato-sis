@@ -1,47 +1,42 @@
 .model controllore
 .inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0
-.outputs STORE1 STORE0 SETTORE_NON_VALIDO IS_REQ_VALID
-.default_input_arrival 0.00 0.00 
-.default_output_required 0.00 0.00 
-.default_input_drive 0.20 0.20 
-.default_output_load 1.00 
-.default_max_input_load 999.00 
-.latch    [533] LatchOut_v5 re NIL 0
-.latch    [530] LatchOut_v6 re NIL 1
-.latch    [532] LatchOut_v7 re NIL 1
+.outputs STOREA STOREB STOREC SETTORE_NON_VALIDO IS_REQ_VALID
+.latch    [929] LatchOut_v5   0
+.latch    [930] LatchOut_v6   1
+.latch    [931] LatchOut_v7   1
 .start_kiss
 .i 5
-.o 4
+.o 5
 .p 27
 .s 5
 .r OFF
-0---- OFF OFF 0000
--0--- OFF OFF 0000
---0-- OFF OFF 0000
----0- OFF OFF 0000
-----0 OFF OFF 0000
-11111 OFF LOAD_A 0001
------ LOAD_A LOAD_B 0101
------ LOAD_B LOAD_C 1001
------ LOAD_C READY 1101
---101 READY READY 0010
---011 READY READY 0010
---11- READY READY 0010
-10000 READY READY 0010
--1000 READY READY 0010
-00001 READY READY 0000
-00010 READY READY 0000
-00100 READY READY 0000
-11100 READY READY 0000
-11010 READY READY 0000
-11001 READY READY 0000
-01001 READY READY 0001
-01010 READY READY 0001
-01100 READY READY 0001
-10001 READY READY 0001
-10010 READY READY 0001
-10100 READY READY 0001
-00000 READY OFF 0000
+0---- OFF OFF 00000
+-0--- OFF OFF 00000
+--0-- OFF OFF 00000
+---0- OFF OFF 00000
+----0 OFF OFF 00000
+11111 OFF LOAD_A 00001
+----- LOAD_A LOAD_B 10001
+----- LOAD_B LOAD_C 01001
+----- LOAD_C READY 00101
+--101 READY READY 00110
+--011 READY READY 00110
+--11- READY READY 00110
+10000 READY READY 00110
+-1000 READY READY 00110
+00001 READY READY 00000
+00010 READY READY 00000
+00100 READY READY 00000
+11100 READY READY 00000
+11010 READY READY 00000
+11001 READY READY 00000
+01001 READY READY 00001
+01010 READY READY 00001
+01100 READY READY 00001
+10001 READY READY 00001
+10010 READY READY 00001
+10100 READY READY 00001
+00000 READY OFF 00000
 .end_kiss
 .latch_order LatchOut_v5 LatchOut_v6 LatchOut_v7
 .code OFF 011
@@ -49,97 +44,80 @@
 .code LOAD_B 111
 .code LOAD_C 100
 .code READY 001
-.names SECTOR2 INOUT1 INOUT0 [606]
-0-- 1
--0- 1
---0 1
-.names LatchOut_v6 SECTOR1 SECTOR0 [611]
-0-- 1
--0- 1
---0 1
-.names LatchOut_v5 [612]
-0 1
-.names LatchOut_v7 [613]
-0 1
-.names [606] [611] [612] [613] [755]
-00-- 1
---00 1
-.names [755] [533]
-1 1
-.names INOUT1 INOUT0 [696]
-1- 1
--1 1
-.names SECTOR1 SECTOR0 [615]
-1- 1
--1 1
-.names SECTOR2 [615] [583]
-00 1
-.names SECTOR1 SECTOR0 [696] [583] [615] SECTOR2 [694]
-11---- 1
---11-- 1
-----11 1
-.names LatchOut_v6 [607]
-0 1
-.names [694] [612] [607] [685]
-0-- 1
--0- 1
---0 1
-.names [685] SETTORE_NON_VALIDO
-0 1
-.names SECTOR2 LatchOut_v5 SETTORE_NON_VALIDO [615] [521]
-0000 1
-.names LatchOut_v6 LatchOut_v5 [757]
-0- 1
--0 1
-.names [757] LatchOut_v7 STORE1
-0- 1
--0 1
-.names [607] LatchOut_v5 [620]
-0- 1
--0 1
-.names STORE1 [620] [522]
-00 1
-.names [521] [522] [551]
-00 1
-.names [551] [755] [607] [756]
-0-- 1
--00 1
-.names [756] [530]
-1 1
-.names [757] [532]
-1 1
-.names [620] STORE0
-0 1
-.names [755] [674]
-0 1
-.names INOUT1 INOUT0 [515]
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+LatchOut_v7 [929]
+-----11- 1
+-----101 1
+1111101- 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+LatchOut_v7 [930]
+0----01- 1
+-0---01- 1
+--0--01- 1
+---0-01- 1
+----001- 1
+-----101 1
+000000-- 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 [931]
+------0 1
+0----01 1
+-0---01 1
+--0--01 1
+---0-01 1
+----001 1
+1111101 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STOREA
+101 1
+.names LatchOut_v5 LatchOut_v6 STOREB
 11 1
-00 1
-.names [515] SETTORE_NON_VALIDO [756] [700]
-1-- 1
--1- 1
---1 1
-.names [674] [620] [700] IS_REQ_VALID
-0-- 1
--0- 1
---0 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+LatchOut_v7 STOREC
+-------0 1
+--11-00- 1
+--1-100- 1
+---1100- 1
+1-00000- 1
+-100000- 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+SETTORE_NON_VALIDO
+--11-00 1
+--1-100 1
+---1100 1
+1-00000 1
+-100000 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
+LatchOut_v7 IS_REQ_VALID
+-------0 1
+-----11- 1
+-----101 1
+01001-0- 1
+10001-0- 1
+01010-0- 1
+10010-0- 1
+01100-0- 1
+10100-0- 1
+1111101- 1
 .exdc 
 .inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
 LatchOut_v7
-.outputs [533] [530] [532] STORE1 STORE0 SETTORE_NON_VALIDO IS_REQ_VALID
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [533]
+.outputs [929] [930] [931] STOREA STOREB STOREC SETTORE_NON_VALIDO \
+IS_REQ_VALID
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [929]
 0-0 1
 -10 1
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [530]
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [930]
 0-0 1
 -10 1
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [532]
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [931]
 0-0 1
 -10 1
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STORE1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STOREA
 0-0 1
 -10 1
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STORE0
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STOREB
+0-0 1
+-10 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STOREC
 0-0 1
 -10 1
 .names LatchOut_v5 LatchOut_v6 LatchOut_v7 SETTORE_NON_VALIDO
