@@ -10,5 +10,5 @@
 .outputs O
 
 # input, output, rising edge, no clock, reset status: 0
-.latch A O fe NIL 0
+.latch A O re NIL 0
 .end
