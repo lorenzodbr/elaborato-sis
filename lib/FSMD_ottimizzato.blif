@@ -1,511 +1,253 @@
 .model FSMD
 .inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0
 .outputs SETTORE_NON_VALIDO SBARRA SECTOR_A SECTOR_B SECTOR_C
-.default_input_arrival 0.00 0.00 
-.default_output_required 0.00 0.00 
-.default_input_drive 0.20 0.20 
-.default_output_load 1.00 
-.default_max_input_load 999.00 
-.latch    [669] LatchOut_v5 re NIL 0
-.latch    [668] LatchOut_v6 re NIL 1
-.latch    [670] LatchOut_v7 re NIL 1
-.latch    [667] [307] fe NIL 0
-.latch    [666] [308] fe NIL 0
-.latch    [665] [309] fe NIL 0
-.latch    [664] [310] fe NIL 0
-.latch    [663] [311] fe NIL 0
-.latch    [662] [312] fe NIL 0
-.latch    [661] [313] fe NIL 0
-.latch    [660] [314] fe NIL 0
-.latch    [659] [315] fe NIL 0
-.latch    [658] [316] fe NIL 0
-.latch    [657] [317] fe NIL 0
-.latch    [656] [318] fe NIL 0
-.latch    [655] [319] fe NIL 0
-.latch    [654] [320] fe NIL 0
-.latch    [653] [321] fe NIL 0
-.names LatchOut_v5 LatchOut_v6 [2060]
-0- 1
--0 1
-.names SECTOR0 SECTOR2 SECTOR1 [1111]
-0-- 1
--0- 1
---0 1
-.names LatchOut_v6 [1106]
+.latch    [15] LatchOut_v5   0
+.latch    [16] LatchOut_v6   1
+.latch    [17] LatchOut_v7   1
+.latch    PREV_OR_NEW_SECTOR_A_4 REG_A_4 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_A_3 REG_A_3 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_A_2 REG_A_2 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_A_1 REG_A_1 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_A_0 REG_A_0 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_B_4 REG_B_4 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_B_3 REG_B_3 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_B_2 REG_B_2 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_B_1 REG_B_1 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_B_0 REG_B_0 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_C_4 REG_C_4 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_C_3 REG_C_3 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_C_2 REG_C_2 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_C_1 REG_C_1 fe NIL 0
+.latch    PREV_OR_NEW_SECTOR_C_0 REG_C_0 fe NIL 0
+.names INOUT1 INOUT0 LatchOut_v5 LatchOut_v6 SECTOR_ENCODED_0 SECTOR_ENCODED_1 \
+[48] SETTORE_NON_VALIDO
+1-0000- 1
+-10000- 1
+--00001 1
+.names IS_REQ_VALID MAX_REACHED [45] [47] SBARRA
+1--1 1
+101- 1
+.names REG_A_4 REG_A_3 REG_A_2 REG_A_1 REG_A_0 IS_VALID_FOR_A OPERATION2 \
+OPERATION1 OPERATION0 [62] SECTOR_A
+-----11111 1
+111110---- 1
+.names REG_B_4 REG_B_3 REG_B_2 REG_B_1 REG_B_0 OPERATION2 OPERATION1 \
+OPERATION0 IS_VALID_FOR_B [62] SECTOR_B
+-----11111 1
+11111---0- 1
+.names REG_C_4 REG_C_3 REG_C_2 REG_C_1 REG_C_0 OPERATION2 OPERATION1 \
+OPERATION0 IS_VALID_FOR_C [62] SECTOR_C
+-----00011 1
+11000---0- 1
+.names SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 LatchOut_v7 [46] [15]
+---1-1- 1
+111-1-0 1
+.names SECTOR2 SETTORE_NON_VALIDO [15] LatchOut_v5 LatchOut_v6 STOREA [48] \
+[16]
+-----1- 1
+--0-1-- 1
+00-0--0 1
+.names STOREB [17]
 0 1
-.names INOUT1 INOUT0 [1114]
-0- 1
--0 1
-.names [1111] [1106] [1114] [650]
-000 1
-.names [650] LatchOut_v5 LatchOut_v7 [1090]
-00- 1
-0-0 1
-.names [2060] [1090] [2058]
-0- 1
--0 1
-.names [2058] [669]
-1 1
-.names SECTOR0 SECTOR2 SECTOR1 [1062]
-000 1
-.names LatchOut_v5 [1105]
-0 1
-.names SECTOR0 [1107]
-0 1
-.names [1107] INOUT1 INOUT0 [1721]
-0-- 1
--00 1
-.names SECTOR2 SECTOR1 [1080]
-00 1
-.names SECTOR2 SECTOR1 [1719]
-01 1
-10 1
-.names [1721] [1080] [1107] [1719] [1068]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names [1068] [1105] [1106] [1447]
-0-- 1
--0- 1
---0 1
-.names [1062] [1105] [1447] [1907]
-0-- 1
--0- 1
---0 1
-.names [1907] [2058] [1106] [1124]
-0-- 1
--00 1
-.names [1124] [1106] [2058] [2041]
-00- 1
-0-0 1
-.names [2041] [2059]
-0 1
-.names [2059] [668]
-1 1
-.names [2060] [670]
-1 1
-.names LatchOut_v7 [2060] LatchOut_v5 [1126]
-0-- 1
--0- 1
---0 1
-.names [1105] LatchOut_v7 [1128]
-0- 1
--0 1
-.names SECTOR0 [1128] [1129]
-1- 1
--1 1
-.names [1129] SECTOR1 [1130]
-1- 1
--0 1
-.names [1129] [1130] [1132]
-1- 1
--0 1
-.names INOUT1 INOUT0 [1723]
-01 1
-10 1
-.names [1124] [1447] [1030]
-01 1
-.names [2058] [1723] [1030] [1026]
-00- 1
-0-0 1
-.names LatchOut_v7 [1026] [1485]
-0- 1
--0 1
-.names [1128] [1485] [1136]
-1- 1
--0 1
-.names [1132] [1136] [1139]
-1- 1
--1 1
-.names [1126] [1139] [1140]
-0- 1
--0 1
-.names [1140] [1671]
-0 1
-.names [312] [1141]
-0 1
-.names [317] [1143]
-0 1
-.names [1128] [1650]
-0 1
-.names SECTOR1 [1109]
-0 1
-.names [1650] [1109] [1129] [1145]
-0-- 1
--0- 1
---0 1
-.names [1130] [1141] [1143] [1145] [1147]
-00-- 1
---00 1
-.names [1147] [2001]
-0 1
-.names [307] [1127]
-0 1
-.names [2001] [1127] [1132] [1149]
-0-- 1
--00 1
-.names [1149] [1560]
-0 1
-.names [314] [1152]
-0 1
-.names [319] [1153]
-0 1
-.names [1130] [1152] [1145] [1153] [1154]
-00-- 1
---00 1
-.names [1154] [1999]
-0 1
-.names [309] [1151]
-0 1
-.names [1999] [1132] [1151] [1156]
-0-- 1
--00 1
-.names [313] [1158]
-0 1
-.names [318] [1159]
-0 1
-.names [1130] [1158] [1145] [1159] [1160]
-00-- 1
---00 1
-.names [1160] [1997]
-0 1
-.names [308] [1157]
-0 1
-.names [1997] [1132] [1157] [1162]
-0-- 1
--00 1
-.names [315] [1166]
-0 1
-.names [320] [1168]
-0 1
-.names [1130] [1166] [1145] [1168] [1169]
-00-- 1
---00 1
-.names [1169] [1995]
-0 1
-.names [310] [1164]
-0 1
-.names [1995] [1132] [1164] [1170]
-0-- 1
--00 1
-.names [1156] [1162] [1149] [1170] [1873]
-1--- 1
--1-- 1
---1- 1
----1 1
-.names [1873] INOUT1 [1173]
-0- 1
--0 1
-.names [316] [1176]
-0 1
-.names [321] [1177]
-0 1
-.names [1130] [1176] [1145] [1177] [1178]
-00-- 1
---00 1
-.names [1178] [1989]
-0 1
-.names [311] [1174]
-0 1
-.names [1989] [1132] [1174] [1179]
-0-- 1
--00 1
-.names [1170] [1179] [1180]
-1- 1
--1 1
-.names [1173] [1180] [1181]
-1- 1
--1 1
-.names [1156] [1181] [1575]
-1- 1
--1 1
-.names [1145] [1156] [1170] [1179] [1863]
-0--- 1
--0-- 1
---0- 1
----0 1
-.names [1145] [1156] [1188]
-1- 1
--1 1
-.names [1863] [1180] [1188] [1725]
-0-- 1
--00 1
-.names [1162] [1149] [1173] [1725] [1859]
-0--- 1
--0-- 1
---0- 1
----0 1
-.names [1129] [1145] [1861]
-0- 1
--0 1
-.names [1859] [1861] [1191]
-0- 1
--0 1
-.names INOUT1 [1112]
-0 1
-.names [1112] [1179] [1192]
-0- 1
--0 1
-.names [1191] [1192] [919]
-00 1
-.names [919] [1156] [1170] [1196]
-0-- 1
--0- 1
---0 1
-.names [1196] [1162] [1197]
-1- 1
--0 1
-.names [1575] [1197] [1162] INOUT1 [542]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names [1560] [542] [1149] [1197] [1589]
-00-- 1
---00 1
-.names [1139] [1489]
-0 1
-.names [307] [1671] [1589] [1489] [898]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names [898] [1112] [1126] [2061]
-0-- 1
--00 1
-.names [2061] [667]
-1 1
-.names [1162] [1532]
-0 1
-.names [1575] [1196] [53]
-11 1
-.names [1162] [1532] [53] [1593]
-1-1 1
--10 1
-.names [1671] [308] [1593] [1489] [880]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names INOUT0 [1113]
-0 1
-.names [880] [1113] [1126] [2062]
-0-- 1
--00 1
-.names [2062] [666]
-1 1
-.names [1196] [1586]
-0 1
-.names [1192] [1691]
-0 1
-.names [1170] [1691] [1156] [1181] [543]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names [1575] [1586] [543] [1597]
-0-- 1
--00 1
-.names [1671] [309] [1597] [1489] [860]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names SECTOR2 [1108]
-0 1
-.names [860] [1108] [1126] [2063]
-0-- 1
--00 1
-.names [2063] [665]
-1 1
-.names [1173] [1113] [1191] [1731]
-0-- 1
--00 1
-.names [1179] [1571]
-0 1
-.names [1731] [1571] [1191] [1691] [1203]
-11-- 1
---11 1
-.names [1203] [1601]
-0 1
-.names [1112] [1203] INOUT1 [1601] [1733]
-00-- 1
---00 1
-.names [1170] [1557]
-0 1
-.names [1170] [1733] [1557] [1691] [834]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names [1181] [834] [1607]
-0- 1
--0 1
-.names [1671] [310] [1607] [1489] [826]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names [826] [1109] [1126] [2064]
-0-- 1
--00 1
-.names [2064] [664]
-1 1
-.names [1140] [1174] [1601] [1139] [1206]
-00-- 1
---00 1
-.names [1206] [1963]
-0 1
-.names [1963] [1107] [1126] [2065]
-0-- 1
--00 1
-.names [2065] [663]
-1 1
-.names [1130] [1136] [1207]
-1- 1
--1 1
-.names [1207] [1589] [577]
-01 1
-.names [2060] LatchOut_v7 [1208]
-1- 1
--0 1
-.names [1207] [1208] [1209]
-0- 1
--0 1
-.names [1112] [1208] [1141] [1209] [1210]
-00-- 1
---00 1
-.names [577] [1210] [2066]
-1- 1
--1 1
-.names [2066] [662]
-1 1
-.names [1113] [1208] [1158] [1209] [1211]
-00-- 1
---00 1
-.names [1207] [1614]
-0 1
-.names [1211] [1593] [1614] [2049]
-00- 1
-0-0 1
-.names [2049] [2067]
-0 1
-.names [2067] [661]
-1 1
-.names [1108] [1208] [1152] [1209] [1212]
-00-- 1
---00 1
-.names [1212] [1597] [1614] [2050]
-00- 1
-0-0 1
-.names [2050] [2068]
-0 1
-.names [2068] [660]
-1 1
-.names [1109] [1208] [1166] [1209] [1213]
-00-- 1
---00 1
-.names [1213] [1607] [1614] [2051]
-00- 1
-0-0 1
-.names [2051] [2069]
-0 1
-.names [2069] [659]
-1 1
-.names [1107] [1208] [1176] [1209] [1214]
-00-- 1
---00 1
-.names [1214] [1953]
-0 1
-.names [1953] [1601] [1207] [2070]
-0-- 1
--00 1
-.names [2070] [658]
-1 1
-.names [1136] [1145] [1215]
-1- 1
--1 1
-.names [1215] LatchOut_v7 [1216]
-0- 1
--0 1
-.names [1216] [1681]
-0 1
-.names [1215] [1633]
-0 1
-.names [317] [1681] [1589] [1633] [746]
-0-0- 1
--00- 1
-0--0 1
--0-0 1
-.names [746] LatchOut_v7 [1112] [2071]
-0-- 1
--00 1
-.names [2071] [657]
-1 1
-.names LatchOut_v7 [1116]
-0 1
-.names [1116] INOUT0 [318] [1681] [1593] [1633] [2072]
-11---- 1
+.names INOUT1 REG_A_4 IS_VALID_FOR_A STOREA OPERATION4 [56] \
+PREV_OR_NEW_SECTOR_A_4
+1--1-- 1
+--1-1- 1
+-1---1 1
+.names INOUT0 REG_A_3 IS_VALID_FOR_A STOREA OPERATION3 [56] \
+PREV_OR_NEW_SECTOR_A_3
+1--1-- 1
+--1-1- 1
+-1---1 1
+.names SECTOR2 REG_A_2 IS_VALID_FOR_A OPERATION2 STOREA [56] \
+PREV_OR_NEW_SECTOR_A_2
 --11-- 1
-----11 1
-.names [2072] [656]
-1 1
-.names [1116] [1114] [1219]
-0- 1
--0 1
-.names [1108] [1219] [1153] [1216] [1220]
-00-- 1
---00 1
-.names [1220] [1597] [1633] [2055]
-00- 1
-0-0 1
-.names [2055] [2073]
-0 1
-.names [2073] [655]
-1 1
-.names [1109] [1219] [1168] [1216] [1221]
-00-- 1
---00 1
-.names [1221] [1607] [1633] [2056]
-00- 1
-0-0 1
-.names [2056] [2074]
-0 1
-.names [2074] [654]
-1 1
-.names [1107] [1219] [1177] [1216] [1222]
-00-- 1
---00 1
-.names [1222] [1943]
-0 1
-.names [1943] [1601] [1215] [2075]
-0-- 1
--00 1
-.names [2075] [653]
-1 1
-.names [1447] SETTORE_NON_VALIDO
-0 1
-.names [1191] INOUT0 [1112] [1717]
-0-- 1
--00 1
-.names [1485] [1717] SBARRA
+1---1- 1
+-1---1 1
+.names SECTOR1 REG_A_1 IS_VALID_FOR_A OPERATION1 STOREA [56] \
+PREV_OR_NEW_SECTOR_A_1
+--11-- 1
+1---1- 1
+-1---1 1
+.names SECTOR0 REG_A_0 IS_VALID_FOR_A OPERATION0 STOREA [56] \
+PREV_OR_NEW_SECTOR_A_0
+--11-- 1
+1---1- 1
+-1---1 1
+.names INOUT1 REG_B_4 IS_VALID_FOR_B STOREB OPERATION4 [55] \
+PREV_OR_NEW_SECTOR_B_4
+1--1-- 1
+--1-1- 1
+-1---1 1
+.names INOUT0 REG_B_3 IS_VALID_FOR_B STOREB OPERATION3 [55] \
+PREV_OR_NEW_SECTOR_B_3
+1--1-- 1
+--1-1- 1
+-1---1 1
+.names SECTOR2 REG_B_2 OPERATION2 IS_VALID_FOR_B STOREB [55] \
+PREV_OR_NEW_SECTOR_B_2
+--11-- 1
+1---1- 1
+-1---1 1
+.names SECTOR1 REG_B_1 OPERATION1 IS_VALID_FOR_B STOREB [55] \
+PREV_OR_NEW_SECTOR_B_1
+--11-- 1
+1---1- 1
+-1---1 1
+.names SECTOR0 REG_B_0 OPERATION0 IS_VALID_FOR_B STOREB [55] \
+PREV_OR_NEW_SECTOR_B_0
+--11-- 1
+1---1- 1
+-1---1 1
+.names INOUT1 REG_C_4 IS_VALID_FOR_C OPERATION4 [491] [44] \
+PREV_OR_NEW_SECTOR_C_4
+--11-- 1
+-1--1- 1
+1----1 1
+.names INOUT0 REG_C_3 IS_VALID_FOR_C OPERATION3 [491] [44] \
+PREV_OR_NEW_SECTOR_C_3
+--11-- 1
+-1--1- 1
+1----1 1
+.names SECTOR2 REG_C_2 OPERATION2 IS_VALID_FOR_C [491] [63] \
+PREV_OR_NEW_SECTOR_C_2
+--11-- 1
+-1--1- 1
+1----1 1
+.names SECTOR1 REG_C_1 OPERATION1 IS_VALID_FOR_C [491] [63] \
+PREV_OR_NEW_SECTOR_C_1
+--11-- 1
+-1--1- 1
+1----1 1
+.names SECTOR0 REG_C_0 OPERATION0 IS_VALID_FOR_C [491] [63] \
+PREV_OR_NEW_SECTOR_C_0
+--11-- 1
+-1--1- 1
+1----1 1
+.names SETTORE_NON_VALIDO [15] [16] LatchOut_v7 [45] [47] IS_REQ_VALID
+-1---- 1
+---0-- 1
+--0-1- 1
+0-0--1 1
+.names TO_OPERATION_4 TO_OPERATION_3 [177] TO_OPERATION_0 SECTOR_ENCODED_0 \
+SECTOR_ENCODED_1 [64] MAX_REACHED
+----00- 1
+110--0- 1
+11-1-11 1
+.names IS_REQ_VALID STOREA [50] IS_VALID_FOR_A
+101 1
+.names OPERATION1 OPERATION0 C2 [177] [498] TO_OPERATION_2 TO_OPERATION_1 \
+TO_OPERATION_0 [45] [64] OPERATION2
+1--0------ 1
+-1-------1 1
+----11-1-- 1
+--0--1--1- 1
+0----01-1- 1
+.names [498] TO_OPERATION_1 TO_OPERATION_0 [45] [53] OPERATION1
+111-- 1
+100-- 1
+-1-11 1
+-0-10 1
+.names MAX_REACHED [498] TO_OPERATION_0 [45] OPERATION0
+-10- 1
+1-11 1
+0-01 1
+.names IS_REQ_VALID STOREB [49] IS_VALID_FOR_B
+101 1
+.names IS_REQ_VALID [44] [51] IS_VALID_FOR_C
+101 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STOREA
+101 1
+.names LatchOut_v5 LatchOut_v6 STOREB
 11 1
-.names [309] [307] [308] [1224]
-0-- 1
--0- 1
+.names REG_A_4 REG_B_4 REG_C_4 [49] [50] [51] TO_OPERATION_4
+-1-1-- 1
+1---1- 1
+--1--1 1
+.names TO_OPERATION_4 [45] [47] [57] [58] OPERATION4
+1-11- 1
+11--1 1
+01--0 1
+.names REG_A_3 REG_B_3 REG_C_3 [49] [50] [51] TO_OPERATION_3
+-1-1-- 1
+1---1- 1
+--1--1 1
+.names [53] [64] C2
+01 1
+.names TO_OPERATION_0 [60] [61] [177]
+1-- 1
+-1- 1
 --0 1
-.names [1224] [1164] [1174] SECTOR_A
-000 1
-.names [314] [312] [313] [1227]
-0-- 1
--0- 1
---0 1
-.names [1227] [1166] [1176] SECTOR_B
-000 1
-.names [317] [318] [1229]
+.names [47] [60] [61] [498]
+11- 1
+1-1 1
+.names TO_OPERATION_3 C2 [177] [498] [45] [47] [57] OPERATION3
+-----10 1
+1-11--- 1
+01--1-- 1
+10--1-- 1
+.names REG_A_2 REG_B_2 REG_C_2 [49] [50] [51] TO_OPERATION_2
+-1-1-- 1
+1---1- 1
+--1--1 1
+.names REG_A_1 REG_B_1 REG_C_1 [49] [50] [51] TO_OPERATION_1
+-1-1-- 1
+1---1- 1
+--1--1 1
+.names REG_A_0 REG_B_0 REG_C_0 [49] [50] [51] TO_OPERATION_0
+-1-1-- 1
+1---1- 1
+--1--1 1
+.names IS_VALID_FOR_C [44] [491]
+00 1
+.names SECTOR2 SECTOR1 SECTOR0 [48] SECTOR_ENCODED_0
+1--0 1
+001- 1
+.names SECTOR2 SECTOR1 SECTOR0 SECTOR_ENCODED_0 SECTOR_ENCODED_1
+1--1 1
+010- 1
+.names SETTORE_NON_VALIDO LatchOut_v7 [44]
+1- 1
+-0 1
+.names INOUT1 INOUT0 [45]
+01 1
+.names INOUT1 INOUT0 [46]
 0- 1
 -0 1
-.names [319] [1229] [320] [321] SECTOR_C
-0000 1
+.names INOUT1 INOUT0 [47]
+10 1
+.names SECTOR1 SECTOR0 [48]
+1- 1
+-1 1
+.names SECTOR_ENCODED_0 SECTOR_ENCODED_1 [49]
+01 1
+.names SECTOR_ENCODED_0 SECTOR_ENCODED_1 [50]
+11 1
+.names SECTOR_ENCODED_0 SECTOR_ENCODED_1 [51]
+10 1
+.names MAX_REACHED TO_OPERATION_0 [53]
+1- 1
+-0 1
+.names IS_VALID_FOR_B STOREB [55]
+00 1
+.names IS_VALID_FOR_A STOREA [56]
+00 1
+.names TO_OPERATION_3 [177] [57]
+1- 1
+-1 1
+.names TO_OPERATION_3 C2 [58]
+0- 1
+-0 1
+.names TO_OPERATION_2 TO_OPERATION_1 [60]
+1- 1
+-1 1
+.names TO_OPERATION_4 TO_OPERATION_3 [61]
+1- 1
+-1 1
+.names OPERATION4 OPERATION3 [62]
+11 1
+.names [44] [46] [63]
+11 1
+.names TO_OPERATION_2 TO_OPERATION_1 [64]
+11 1
 .end

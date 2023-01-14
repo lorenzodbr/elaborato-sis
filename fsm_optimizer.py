@@ -106,7 +106,7 @@ def parse_output(output):
     with open(output, "r") as fout:
         line = fout.readline()
         while line != "":
-            if "sis>print_map_stats" in line:
+            if "sis>print_stats" in line:
                 map_stats = True
             
             if map_stats and "Total Area" in line:
