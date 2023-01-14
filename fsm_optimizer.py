@@ -1,6 +1,8 @@
 """
+Versione 2.0 basata sullo script di Zenaro Stefano
+
 FSM_OPTIMIZER:
-ottimizza un file blif con la macchina a stati finiti.
+ottimizza un file blif con il progetto finito.
 
 Il programma copia il file originale per n_copies volte,
 poi esegue l'ottimizzazione su queste copie.
@@ -9,15 +11,16 @@ i file blif ottimizzati e viene rieseguita la ottimizzazione.
 
 Questo processo continua per n_layer volte.
 
-A fine programma la macchina a stati finiti
+A fine programma la FSM
 con l'area minore viene salvata nel file
 controllore_ottimizzato.blif
 """
 
-__author__ = "Zenaro Stefano"
-__version__ = "2020-12-22 01_01"
+__author__ = "Di Berardino Lorenzo"
+__version__ = "2023-01-14 2.0"
 
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -27,8 +30,8 @@ boold = False
 
 starttime = int(time.time())                               # timestamp inizio programma
 current_dir = os.path.dirname(os.path.realpath(__file__))  # cartella script attuale
-fsm_dir = os.path.join(current_dir, "lib")                 # cartella con FSM
-fsm_path = os.path.join(fsm_dir, "controllore.blif")       # file FSM da ottimizzare
+fsm_dir = os.path.join(current_dir, "lib")                # cartella con FSM
+fsm_path = os.path.join(fsm_dir, "controllore.blif")              # file FSM da ottimizzare
 
 n_layer = 10   # numero strati di ottimizzazione
 n_copies = 10  # numero di copie ottimizzate per strato
@@ -99,27 +102,26 @@ def parse_output(output):
     :return float total_area: area del circuito ottimizzato
     :return float gate_count: numero di gate del circuito ottimizzato
     """
-    map_stats = False
-    str_total_area = "-1"
-    str_gate_count = "-1"
+    stats = False
+    str_nodes = "-1"
+    str_latches = "-1"
 
     with open(output, "r") as fout:
         line = fout.readline()
         while line != "":
             if "sis>print_stats" in line:
-                map_stats = True
+                stats = True
             
-            if map_stats and "Total Area" in line:
-                str_total_area = line.replace("Total Area", "").strip().strip("=").strip()
-            elif map_stats and "Gate Count" in line:
-                str_gate_count = line.replace("Gate Count", "").strip().strip("=").strip()
+            if stats and "nodes" in line:
+                str_nodes = line.split("nodes=")[1].split("\t")[0]
+                str_latches = line.split("latches=")[1].split("\t")[0]
 
             line = fout.readline()
 
-    total_area = float(str_total_area)
-    gate_count = float(str_gate_count)
+    nodes = int(str_nodes)
+    latches = int(str_latches)
 
-    return total_area, gate_count
+    return nodes, latches
 
 
 def log(t_text, t_file):
@@ -141,8 +143,8 @@ def get_opt_stats(t_file):
     :return (None, float) gate_count: numero di gate della vecchia FSM ottimizzata
     """
     stats = None
-    total_area = None
-    gate_count = None
+    nodes_count = None
+    latches_count = None
 
     try:
         with open(t_file, "r") as fstats:
@@ -154,13 +156,13 @@ def get_opt_stats(t_file):
         pass
 
     if stats:
-        total_area = float(stats.split(",")[0])
-        gate_count = float(stats.split(",")[1])
+        nodes_count = float(stats.split(",")[0])
+        latches_count = float(stats.split(",")[1])
     
-    return total_area, gate_count
+    return nodes_count, latches_count
 
 
-def write_opt_stats(t_file, area, gates):
+def write_opt_stats(t_file, nodes, latches):
     """
     Scrive le statistiche della nuova FSM ottimizzata.
 
@@ -169,15 +171,25 @@ def write_opt_stats(t_file, area, gates):
     :param float gates: numero di gate della FSM
     """
     with open(t_file, "w") as fstats:
-        fstats.write("area,gates\n")
-        fstats.write("{},{}".format(area, gates))
+        fstats.write("nodes,latches\n")
+        fstats.write("{},{}".format(nodes, latches))
 
+def delete_temp_files(path_outputs, path_layers):
+    """
+    Cancella tutti i file temporanei dentro a path
+    """
+
+    shutil.rmtree(path_outputs)
+
+    for file in os.listdir(path_layers):
+        if re.match(r"controllore_L\d+_\d+.blif", file) or file == "opt_stats.csv" or file == "exec_test.txt":
+            os.remove(os.path.join(path_layers, file))
 
 if __name__ == "__main__":
 
-    smallest_area = None
+    best_fsm_nodes = None
     best_fsm = ""
-    best_fsm_gates = None
+    best_fsm_latches = None
 
     file_path = os.path.dirname(fsm_path)
     outputs_path = os.path.join(file_path, "outputs")
@@ -216,51 +228,52 @@ if __name__ == "__main__":
 
                 # esegui SIS e ottimizza il file blif
                 if optimize(copy_path, file_path, output_path, opt_blif_path) == 0:
-                    total_area, gate_count = parse_output(output_path)
+                    nodes, latches = parse_output(output_path)
                     if boold:
                         log("Statistiche della fsm dopo l'ottimizzazione '{}':".format(file_name + "_L" + str(layer) + "_" + str(i)), flog)
-                        log("* area: {}".format(total_area), flog)
-                        log("* numero di gate: {}".format(gate_count), flog)
+                        log("* nodi: {}".format(nodes), flog)
+                        log("* latches: {}".format(latches), flog)
 
                     # memorizza statistiche della miglior fsm e
                     # il suo percorso
-                    if not smallest_area:
-                        smallest_area = total_area
-                        best_fsm_gates = gate_count
+                    if not best_fsm_nodes:
+                        best_fsm_nodes = nodes
+                        best_fsm_latches = latches
                         best_fsm = opt_blif_path
 
-                    elif total_area < smallest_area:
-                        smallest_area = total_area
-                        best_fsm_gates = gate_count
+                    elif best_fsm_nodes > nodes:
+                        best_fsm_nodes = nodes
+                        best_fsm_latches = latches
                         best_fsm = opt_blif_path
                 else:
                     log("[ERRORE] Qualcosa e' andato storto", flog)
                     sys.exit(1)
         
         log("La miglior fsm e' '{}'".format(best_fsm), flog)
-        log("* area: {}".format(smallest_area), flog)
-        log("* numero di gate: {}".format(best_fsm_gates), flog)
+        log("* nodi: {}".format(best_fsm_nodes), flog)
+        log("* latches: {}".format(best_fsm_latches), flog)
         log("L'ottimizzazione e' durata {} secondi".format(int(time.time()) - starttime), flog)
 
-        current_best_fsm_area, current_best_fsm_gate_count = get_opt_stats(current_best_fsm_stats_path)
+        current_best_fsm_nodes_count, current_best_fsm_latches_count = get_opt_stats(current_best_fsm_stats_path)
 
-        if not current_best_fsm_area or not current_best_fsm_gate_count:
+        if not current_best_fsm_nodes_count or not current_best_fsm_latches_count:
             # non e' stato possibile leggere statistiche della ottimizzazione migliore passata
             # copia la FSM migliore mettendoci un nome riconoscibile
             shutil.copy(best_fsm, os.path.join(file_path, "controllore_ottimizzato.blif"))
 
             # memorizza le statistiche della FSM migliore
-            write_opt_stats(current_best_fsm_stats_path, smallest_area, best_fsm_gates)
+            write_opt_stats(current_best_fsm_stats_path, best_fsm_nodes, best_fsm_latches)
             print(1)
 
-        elif current_best_fsm_area > smallest_area:
+        elif current_best_fsm_nodes_count > best_fsm_nodes:
             # copia la FSM migliore mettendoci un nome riconoscibile
             shutil.copy(best_fsm, os.path.join(file_path, "controllore_ottimizzato.blif"))
 
             # memorizza le statistiche della FSM migliore
-            write_opt_stats(current_best_fsm_stats_path, smallest_area, best_fsm_gates)
+            write_opt_stats(current_best_fsm_stats_path, best_fsm_nodes, best_fsm_latches)
             print(1)
         
         else:
             # la FSM ottimizzata e' peggiore o uguale alla migliore ottimizzazione registrata
             print(0)
+    delete_temp_files(outputs_path, fsm_dir)

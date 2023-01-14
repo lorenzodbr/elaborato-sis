@@ -1,4 +1,6 @@
 """
+Versione 2.0 basata sullo script di Zenaro Stefano
+
 FSMD_OPTIMIZER:
 ottimizza un file blif con il progetto finito.
 
@@ -14,8 +16,8 @@ con l'area minore viene salvata nel file
 FSMD_ottimizzato.blif
 """
 
-__author__ = "Zenaro Stefano"
-__version__ = "2021-01-08 01_01"
+__author__ = "Di Berardino Lorenzo"
+__version__ = "2023-01-14 2.0"
 
 import os
 import re
