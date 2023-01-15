@@ -1,11 +1,6 @@
 echo "[START] minimizza stati e assegna codifica agli stati"
 
 echo ""
-echo "sis>print_stats"
-echo ""
-print_stats
-
-echo ""
 echo "sis>state_minimize stamina"
 echo ""
 state_minimize stamina
@@ -19,21 +14,6 @@ echo ""
 echo "----------------------------------------------------"
 echo ""
 echo "[RUGGED] Minimizza usando script rugged"
-
-echo ""
-echo "sis>print_stats"
-echo ""
-print_stats
-
-echo ""
-echo "sis>reduce_depth"
-echo ""
-reduce_depth
-
-echo ""
-echo "sis>print_stats"
-echo ""
-print_stats
 
 echo ""
 echo "sis>source script.rugged"
