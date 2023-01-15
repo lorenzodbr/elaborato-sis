@@ -1,0 +1,11 @@
+echo "[RUGGED] Minimizza usando script rugged"
+
+echo ""
+echo "sis>source script.rugged"
+echo ""
+source script.rugged
+
+echo ""
+echo "sis>print_stats"
+echo ""
+print_stats

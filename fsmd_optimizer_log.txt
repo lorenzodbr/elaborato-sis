@@ -1,4 +1,4 @@
-[1673719386]La miglior fsmd e' '/home/sis/Desktop/elaborato-sis/lib/FSMD_L3_1.blif'
-[1673719386]* nodi: 64
-[1673719386]* latches: 18
-[1673719386]L'ottimizzazione e' durata 10 secondi
+[1673779787]La miglior fsmd e' '/home/sis/Desktop/elaborato-sis/lib/FSMD_L3_1.blif'
+[1673779787]* nodi: 64
+[1673779787]* latches: 18
+[1673779787]L'ottimizzazione e' durata 10 secondi
