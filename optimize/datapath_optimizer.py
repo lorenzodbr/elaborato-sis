@@ -1,7 +1,7 @@
 """
 Versione 2.0 basata sullo script di Zenaro Stefano
 
-FSM_OPTIMIZER:
+DATAPATH_OPTIMIZER:
 ottimizza un file blif con il progetto finito.
 
 Il programma copia il file originale per n_copies volte,
@@ -11,9 +11,9 @@ i file blif ottimizzati e viene rieseguita la ottimizzazione.
 
 Questo processo continua per n_layer volte.
 
-A fine programma la FSM
-con l'area minore viene salvata nel file
-controllore_ottimizzato.blif
+A fine programma il datapath 
+con l'area minore viene salvato nel file
+datapath_ottimizzato.blif
 """
 
 __author__ = "Di Berardino Lorenzo"
@@ -30,8 +30,8 @@ boold = False
 
 starttime = int(time.time())                               # timestamp inizio programma
 current_dir = os.path.dirname(os.path.realpath(__file__))  # cartella script attuale
-fsm_dir = os.path.join(current_dir, "lib")                # cartella con FSM
-fsm_path = os.path.join(fsm_dir, "controllore.blif")              # file FSM da ottimizzare
+fsm_dir = os.path.join(current_dir, "../non_ottimizzato")  # cartella con FSMD
+fsm_path = os.path.join(fsm_dir, "datapath.blif")          # file Datapath da ottimizzare
 
 n_layer = 10   # numero strati di ottimizzazione
 n_copies = 10  # numero di copie ottimizzate per strato
@@ -74,7 +74,7 @@ def optimize(blif_file, test_directory, output, optimized_blif):
     """
     sis_script = os.path.join(test_directory, "exec_test.txt")
 
-    optimizer_script = os.path.join(current_dir, "_optimizer_scripts", "optimize_fsm.script")
+    optimizer_script = os.path.join(current_dir, "_optimizer_scripts", "optimize_datapath.script")
     
     sis_simulation_script = "set sisout " + output + "\n" + \
                             "read_blif " + blif_file + "\n" + \
@@ -136,11 +136,11 @@ def log(t_text, t_file):
 
 def get_opt_stats(t_file):
     """
-    Restituisce le statistiche della ultima FSM ottimizzata.
+    Restituisce le statistiche della ultima FSMD ottimizzata.
 
     :param str t_file: percorso file statistiche da leggere
-    :return (None, float) total_area: area della vecchia FSM ottimizzata
-    :return (None, float) gate_count: numero di gate della vecchia FSM ottimizzata
+    :return (None, float) total_area: area della vecchia FSMD ottimizzata
+    :return (None, float) gate_count: numero di gate della vecchia FSMD ottimizzata
     """
     stats = None
     nodes_count = None
@@ -164,11 +164,11 @@ def get_opt_stats(t_file):
 
 def write_opt_stats(t_file, nodes, latches):
     """
-    Scrive le statistiche della nuova FSM ottimizzata.
+    Scrive le statistiche della nuova FSMD ottimizzata.
 
     :param str t_file: percorso file statistiche da scrivere
-    :param float area: area della FSM
-    :param float gates: numero di gate della FSM
+    :param float area: area della FSMD
+    :param float gates: numero di gate della FSMD
     """
     with open(t_file, "w") as fstats:
         fstats.write("nodes,latches\n")
@@ -182,7 +182,7 @@ def delete_temp_files(path_outputs, path_layers):
     shutil.rmtree(path_outputs)
 
     for file in os.listdir(path_layers):
-        if re.match(r"controllore_L\d+_\d+.blif", file) or file == "opt_stats.csv" or file == "exec_test.txt":
+        if re.match(r"datapath_L\d+_\d+.blif", file) or file == "opt_stats.csv" or file == "exec_test.txt":
             os.remove(os.path.join(path_layers, file))
 
 if __name__ == "__main__":
@@ -203,7 +203,7 @@ if __name__ == "__main__":
     if not os.path.isdir(outputs_path):
         os.makedirs(outputs_path)
 
-    with open("fsm_optimizer_log.txt", "w") as flog:
+    with open("datapath_optimizer_log.txt", "w") as flog:
         # layer 1 di ottimizzazione
         # copia per n_copies volte il file
         if boold:
@@ -230,7 +230,7 @@ if __name__ == "__main__":
                 if optimize(copy_path, file_path, output_path, opt_blif_path) == 0:
                     nodes, latches = parse_output(output_path)
                     if boold:
-                        log("Statistiche della fsm dopo l'ottimizzazione '{}':".format(file_name + "_L" + str(layer) + "_" + str(i)), flog)
+                        log("Statistiche del datapath dopo l'ottimizzazione '{}':".format(file_name + "_L" + str(layer) + "_" + str(i)), flog)
                         log("* nodi: {}".format(nodes), flog)
                         log("* latches: {}".format(latches), flog)
 
@@ -249,7 +249,7 @@ if __name__ == "__main__":
                     log("[ERRORE] Qualcosa e' andato storto", flog)
                     sys.exit(1)
         
-        log("La miglior fsm e' '{}'".format(best_fsm), flog)
+        log("Il miglior datapath e' '{}'".format(best_fsm), flog)
         log("* nodi: {}".format(best_fsm_nodes), flog)
         log("* latches: {}".format(best_fsm_latches), flog)
         log("L'ottimizzazione e' durata {} secondi".format(int(time.time()) - starttime), flog)
@@ -259,7 +259,7 @@ if __name__ == "__main__":
         if not current_best_fsm_nodes_count or not current_best_fsm_latches_count:
             # non e' stato possibile leggere statistiche della ottimizzazione migliore passata
             # copia la FSM migliore mettendoci un nome riconoscibile
-            shutil.copy(best_fsm, os.path.join(file_path, "controllore_ottimizzato.blif"))
+            shutil.copy(best_fsm, os.path.join(os.path.join(file_path, ".."), "datapath_ottimizzato.blif"))
 
             # memorizza le statistiche della FSM migliore
             write_opt_stats(current_best_fsm_stats_path, best_fsm_nodes, best_fsm_latches)
@@ -267,7 +267,7 @@ if __name__ == "__main__":
 
         elif current_best_fsm_nodes_count > best_fsm_nodes:
             # copia la FSM migliore mettendoci un nome riconoscibile
-            shutil.copy(best_fsm, os.path.join(file_path, "controllore_ottimizzato.blif"))
+            shutil.copy(best_fsm, os.path.join(os.path.join(file_path, ".."), "datapath_ottimizzato.blif"))
 
             # memorizza le statistiche della FSM migliore
             write_opt_stats(current_best_fsm_stats_path, best_fsm_nodes, best_fsm_latches)

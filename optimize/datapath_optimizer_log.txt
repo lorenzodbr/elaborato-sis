@@ -1,0 +1,4 @@
+[1673878390]Il miglior datapath e' '/home/sis/Desktop/elaborato-sis/optimize/../non_ottimizzato/datapath_L3_1.blif'
+[1673878390]* nodi: 54
+[1673878390]* latches: 15
+[1673878390]L'ottimizzazione e' durata 6 secondi

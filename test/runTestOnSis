@@ -2,19 +2,21 @@
 
 #########################################
 # Mattia Corradi - Dalla Chiara Michele #
+# Revamped by Lorenzo Di Berardino      #
 #########################################
 
 
 
 set file_in [lindex $argv 0];
 
-
 log_file result.log
+
+cd ../non_ottimizzato
 
 spawn sis
 
 expect "sis>"
 
-send "sr $file_in\n"
+send "sr ../test/$file_in\n"
 interact
 

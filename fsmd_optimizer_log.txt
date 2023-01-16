@@ -1,4 +1,0 @@
-[1673876084]La miglior fsmd e' '/home/sis/Desktop/elaborato-sis/lib/FSMD_L3_1.blif'
-[1673876084]* nodi: 63
-[1673876084]* latches: 18
-[1673876084]L'ottimizzazione e' durata 8 secondi

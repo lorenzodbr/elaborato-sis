@@ -1,4 +1,4 @@
-rl FSMD_ottimizzato.blif
+rl ../FSMD_ottimizzato.blif
 sim 0 1 0 1 1
 sim 1 1 1 1 0
 sim 1 1 1 1 1

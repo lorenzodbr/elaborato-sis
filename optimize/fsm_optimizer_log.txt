@@ -1,0 +1,4 @@
+[1673879062]La miglior fsm e' '/home/sis/Desktop/elaborato-sis/non_ottimizzato/controllore_generato_L2_1.blif'
+[1673879062]* nodi: 10
+[1673879062]* latches: 3
+[1673879062]L'ottimizzazione e' durata 2 secondi
