@@ -1,0 +1,67 @@
+spawn sis
+UC Berkeley, SIS 1.3.6 (compiled 2017-10-27 16:08:57)
+sis> sr in.txt
+
+Network simulation:
+Outputs: 0 0 0 0 0 0
+Next state: 011000000000000000
+
+Network simulation:
+Outputs: 0 0 0 0 0 0
+Next state: 011000000000000000
+
+Network simulation:
+Outputs: 0 0 0 0 0 0
+Next state: 101000000000000000
+
+Network simulation:
+Outputs: 0 0 0 0 0 0
+Next state: 111101110000000000
+
+Network simulation:
+Outputs: 0 0 0 0 0 0
+Next state: 100101111110100000
+
+Network simulation:
+Outputs: 0 0 0 0 0 1
+Next state: 001101111110111000
+
+Network simulation:
+Outputs: 0 1 0 0 0 1
+Next state: 001110001110111000
+
+Network simulation:
+Outputs: 0 0 1 0 0 1
+Next state: 001110001110011000
+
+Network simulation:
+Outputs: 0 0 1 0 0 0
+Next state: 001110001110010111
+
+Network simulation:
+Outputs: 0 1 0 0 0 1
+Next state: 001110001110011000
+
+Network simulation:
+Outputs: 1 0 0 0 0 1
+Next state: 001110001110011000
+
+Network simulation:
+Outputs: 0 0 0 0 0 1
+Next state: 001110001110011000
+
+Network simulation:
+Outputs: 0 1 0 0 0 1
+Next state: 001110001110111000
+
+Network simulation:
+Outputs: 0 1 0 0 0 1
+Next state: 001110001111011000
+
+Network simulation:
+Outputs: 0 1 0 0 1 1
+Next state: 001110001111111000
+
+Network simulation:
+Outputs: 0 0 0 0 1 1
+Next state: 001110001111111000
