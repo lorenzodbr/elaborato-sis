@@ -1,0 +1,8 @@
+source script.rugged
+resub
+sweep
+eliminate -
+full_simplify
+simplify
+fx
+print_stats
