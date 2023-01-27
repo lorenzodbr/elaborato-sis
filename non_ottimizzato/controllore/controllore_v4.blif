@@ -17,16 +17,16 @@
 --0-- OFF OFF 000001
 ---0- OFF OFF 000001
 ----0 OFF OFF 000001
-11111 OFF LOAD_A 000001
+11111 OFF LOAD_A 000000
 
 #Caricamento del primo settore
------ LOAD_A LOAD_B 100001
+----- LOAD_A LOAD_B 100000
 
 #Caricamento del secondo settore
------ LOAD_B LOAD_C 010001
+----- LOAD_B LOAD_C 010000
 
 #Caricamento del terzo settore
------ LOAD_C READY 001001
+----- LOAD_C READY 001000
 
 #Gestione errori di inserimento
 --101 READY READY 000100

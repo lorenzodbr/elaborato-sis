@@ -1,9 +1,9 @@
 .model controllore
 .inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0
 .outputs STOREA STOREB STOREC SETTORE_NON_VALIDO IS_REQ_VALID IS_OFF
-.latch    [13854] LatchOut_v5   0
-.latch    [13855] LatchOut_v6   1
-.latch    [13856] LatchOut_v7   1
+.latch    [16837] LatchOut_v5   0
+.latch    [16838] LatchOut_v6   1
+.latch    [16839] LatchOut_v7   1
 .start_kiss
 .i 5
 .o 6
@@ -15,10 +15,10 @@
 --0-- OFF OFF 000001
 ---0- OFF OFF 000001
 ----0 OFF OFF 000001
-11111 OFF LOAD_A 000001
------ LOAD_A LOAD_B 100001
------ LOAD_B LOAD_C 010001
------ LOAD_C READY 001001
+11111 OFF LOAD_A 000000
+----- LOAD_A LOAD_B 100000
+----- LOAD_B LOAD_C 010000
+----- LOAD_C READY 001000
 --101 READY READY 000100
 --011 READY READY 000100
 --11- READY READY 000100
@@ -45,12 +45,12 @@
 .code LOAD_C 100
 .code READY 001
 .names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
-LatchOut_v7 [13854]
+LatchOut_v7 [16837]
 -----11- 1
 -----101 1
 1111101- 1
 .names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
-LatchOut_v7 [13855]
+LatchOut_v7 [16838]
 0----01- 1
 -0---01- 1
 --0--01- 1
@@ -58,7 +58,7 @@ LatchOut_v7 [13855]
 ----001- 1
 -----101 1
 0000000- 1
-.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 [13856]
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 [16839]
 ------0 1
 0----01 1
 -0---01 1
@@ -92,30 +92,25 @@ IS_REQ_VALID
 1001000 1
 0110000 1
 1010000 1
-.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
-LatchOut_v7 IS_OFF
--------0 1
------11- 1
-0----01- 1
--0---01- 1
---0--01- 1
----0-01- 1
-----001- 1
------101 1
-1111101- 1
-0000000- 1
+.names INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 IS_OFF
+0----01 1
+-0---01 1
+--0--01 1
+---0-01 1
+----001 1
+0000000 1
 .exdc 
 .inputs INOUT1 INOUT0 SECTOR2 SECTOR1 SECTOR0 LatchOut_v5 LatchOut_v6 \
 LatchOut_v7
-.outputs [13854] [13855] [13856] STOREA STOREB STOREC SETTORE_NON_VALIDO \
+.outputs [16837] [16838] [16839] STOREA STOREB STOREC SETTORE_NON_VALIDO \
 IS_REQ_VALID IS_OFF
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [13854]
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [16837]
 0-0 1
 -10 1
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [13855]
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [16838]
 0-0 1
 -10 1
-.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [13856]
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [16839]
 0-0 1
 -10 1
 .names LatchOut_v5 LatchOut_v6 LatchOut_v7 STOREA
