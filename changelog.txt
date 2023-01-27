@@ -1,7 +1,13 @@
-#controllore_v1: controllore funzionante, senza azzeramento dei registri allo spegnimento
-#controllore_v2: v1 + azzeramento allo spegnimento
+#controllore_v1:    controllore funzionante, senza azzeramento dei registri allo spegnimento
+#controllore_v2:    v1 + azzeramento allo spegnimento
+#controllore_v3:    nuovo output IS_OFF
+#controllore_v4:    v2 + v3
 
-#datapath_v1: datapath funzionante
-#datapath_v2: ??
-#datapath_v3: collegato direttamente l'output di "MAX_REACHED_INV" al sommatore
-#datapath_v4: aggiunto controllo per la sbarra in caso di uscita senza macchine
+#datapath_v1:       datapath funzionante
+#datapath_v2:       ??
+#datapath_v3:       collegato direttamente l'output di "MAX_REACHED_INV" al sommatore
+#datapath_v4:       aggiunto controllo per la sbarra in caso di uscita senza macchine
+
+#FSMD_v4:           datapath_v4 + controllore_v2
+#FSMD_v5:           apertura sbarre allo spegnimento
+#FSMD_v6:           azzeramento registri
