@@ -1,0 +1,7 @@
+#controllore_v1: controllore funzionante, senza azzeramento dei registri allo spegnimento
+#controllore_v2: v1 + azzeramento allo spegnimento
+#controllore_v3: //TODO
+
+#datapath_v1: datapath funzionante
+#datapath_v2: ??
+#datapath_v3: collegato direttamente l'output di "MAX_REACHED_INV" al sommatore

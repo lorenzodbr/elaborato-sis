@@ -1,124 +1,128 @@
 spawn sis
 UC Berkeley, SIS 1.3.6 (compiled 2017-10-27 16:08:57)
 sis> sr ../test/in3.txt
-Warning: network `controllore_generato_v2.blif', node "INOUT1" does not fanout
-Warning: network `controllore_generato_v2.blif', node "INOUT0" does not fanout
-Warning: network `controllore_generato_v2.blif', node "SECTOR2" does not fanout
-Warning: network `controllore_generato_v2.blif', node "SECTOR1" does not fanout
-Warning: network `controllore_generato_v2.blif', node "SECTOR0" does not fanout
+Warning: network `controllore_v2_ottimizzato.blif', node "INOUT1" does not fanout
+Warning: network `controllore_v2_ottimizzato.blif', node "INOUT0" does not fanout
+Warning: network `controllore_v2_ottimizzato.blif', node "SECTOR2" does not fanout
+Warning: network `controllore_v2_ottimizzato.blif', node "SECTOR1" does not fanout
+Warning: network `controllore_v2_ottimizzato.blif', node "SECTOR0" does not fanout
+Warning: network `datapath', node "[157]" does not fanout
+Warning: network `datapath', node "[221]" does not fanout
+Warning: network `FSMD', node "[157]" does not fanout
+Warning: network `FSMD', node "[221]" does not fanout
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 000000000000000011
+Next state: 011000000000000000
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 000000000000000011
+Next state: 011000000000000000
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 000000000000000101
+Next state: 101000000000000000
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 101110000000000111
+Next state: 111101110000000000
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 101111110100000100
+Next state: 100101111110100000
 
 Network simulation:
 Outputs: 0 0 0 0 0 1
-Next state: 101111110111000001
+Next state: 001101111110111000
 
 Network simulation:
 Outputs: 0 1 0 0 0 1
-Next state: 110001110111000001
+Next state: 001110001110111000
 
 Network simulation:
 Outputs: 0 0 1 0 0 1
-Next state: 110001110011000001
+Next state: 001110001110011000
 
 Network simulation:
 Outputs: 0 0 1 0 0 0
-Next state: 110001110010111001
+Next state: 001110001110010111
 
 Network simulation:
 Outputs: 0 1 0 0 0 1
-Next state: 110001110011000001
+Next state: 001110001110011000
 
 Network simulation:
 Outputs: 1 0 0 0 0 1
-Next state: 110001110011000001
+Next state: 001110001110011000
 
 Network simulation:
 Outputs: 0 0 0 0 0 1
-Next state: 110001110011000001
+Next state: 001110001110011000
 
 Network simulation:
 Outputs: 0 1 0 0 0 1
-Next state: 110001110111000001
+Next state: 001110001110111000
 
 Network simulation:
 Outputs: 0 1 0 0 0 1
-Next state: 110001111011000001
+Next state: 001110001111011000
 
 Network simulation:
 Outputs: 0 0 0 0 0 1
-Next state: 110001111011000001
+Next state: 001110001111011000
 
 Network simulation:
 Outputs: 0 1 0 0 1 1
-Next state: 110001111111000001
+Next state: 001110001111111000
 
 Network simulation:
 Outputs: 0 0 0 0 1 1
-Next state: 110001111111000001
+Next state: 001110001111111000
 
 Network simulation:
 Outputs: 0 0 1 0 1 1
-Next state: 101111111111000001
+Next state: 001101111111111000
 
 Network simulation:
 Outputs: 1 0 0 0 1 1
-Next state: 101111111111000001
+Next state: 001101111111111000
 
 Network simulation:
 Outputs: 0 0 1 0 1 0
-Next state: 101111111110111001
+Next state: 001101111111110111
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 000000000000000011
+Next state: 011000000000000000
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 000000000000000011
+Next state: 011000000000000000
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 000000000000000101
+Next state: 101000000000000000
 
 Network simulation:
 Outputs: 0 0 0 1 0 0
-Next state: 111110000000000111
+Next state: 111111110000000000
 
 Network simulation:
 Outputs: 0 0 0 1 0 0
-Next state: 111110000000000100
+Next state: 100111110000000000
 
 Network simulation:
 Outputs: 0 0 0 1 0 0
-Next state: 111110000001101001
+Next state: 001111110000001101
 
 Network simulation:
 Outputs: 0 0 1 1 0 0
-Next state: 111110000001101001
+Next state: 001111110000001101
 
 Network simulation:
 Outputs: 0 1 0 1 0 0
-Next state: 111110000101101001
+Next state: 001111110000101101
 
 Network simulation:
 Outputs: 0 0 0 0 0 0
-Next state: 000000000000000011
+Next state: 011000000000000000
