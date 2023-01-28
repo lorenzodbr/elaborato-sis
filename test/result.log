@@ -3,11 +3,11 @@ UC Berkeley, SIS 1.3.6 (compiled 2017-10-27 16:08:57)
 sis> sr ../test/in3.txt
 
 Network simulation:
-Outputs: 0 0 0 0 0 0
+Outputs: 0 1 1 0 0 0
 Next state: 000000000000000011
 
 Network simulation:
-Outputs: 0 0 0 0 0 0
+Outputs: 0 1 1 0 0 0
 Next state: 000000000000000011
 
 Network simulation:
@@ -83,11 +83,11 @@ Outputs: 0 0 1 0 1 0
 Next state: 101111111110111001
 
 Network simulation:
-Outputs: 0 0 0 0 0 0
+Outputs: 0 1 1 0 0 0
 Next state: 000000000000000011
 
 Network simulation:
-Outputs: 0 0 0 0 0 0
+Outputs: 0 1 1 0 0 0
 Next state: 000000000000000011
 
 Network simulation:
@@ -115,5 +115,5 @@ Outputs: 0 1 0 1 0 0
 Next state: 111110000101101001
 
 Network simulation:
-Outputs: 0 0 0 0 0 0
+Outputs: 0 1 1 0 0 0
 Next state: 000000000000000011

@@ -1,4 +1,4 @@
-rl ../FSMD_v4_ottimizzato_v1.blif
+rl ../FSMD_v8_ottimizzato_v1.blif
 sim 0 1 0 1 1
 sim 1 1 1 1 0
 sim 1 1 1 1 1

@@ -7,7 +7,12 @@
 #datapath_v2:       ??
 #datapath_v3:       collegato direttamente l'output di "MAX_REACHED_INV" al sommatore
 #datapath_v4:       aggiunto controllo per la sbarra in caso di uscita senza macchine
+#datapath_v5:       sostituito le porte or con dei mux
+#datapath_v6:       cambiata sottrazione
+#datapath_v7:       unificata addizione e sottrazione
 
 #FSMD_v4:           datapath_v4 + controllore_v2
 #FSMD_v5:           apertura sbarre allo spegnimento
 #FSMD_v6:           azzeramento registri
+#FSMD_v7:           datapath_v6 + controllore_v4.blif
+#FSMD_v8:           datapath_v7 + controllore_v4.blif
