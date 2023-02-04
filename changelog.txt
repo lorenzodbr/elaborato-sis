@@ -9,10 +9,12 @@
 #datapath_v4:       aggiunto controllo per la sbarra in caso di uscita senza macchine
 #datapath_v5:       sostituito le porte or con dei mux
 #datapath_v6:       cambiata sottrazione
-#datapath_v7:       unificata addizione e sottrazione
+#datapath_v7:       unificata addizione e sottrazione           --> versione finale con sbarre alzate di notte
+#datapath_v8:       rimosse le sbarre alzate durante la notte   --> versione finale con sbarre abbassate di notte
 
 #FSMD_v4:           datapath_v4 + controllore_v2
 #FSMD_v5:           apertura sbarre allo spegnimento
 #FSMD_v6:           azzeramento registri
 #FSMD_v7:           datapath_v6 + controllore_v4.blif
-#FSMD_v8:           datapath_v7 + controllore_v4.blif
+#FSMD_v8:           datapath_v7 + controllore_v4.blif --> versione finale con sbarre alzate di notte
+#FSMD_v9:           datapath_v8 + controllore_v2.blif --> versione finale con sbarre abbassate di notte
